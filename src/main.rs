@@ -46,7 +46,7 @@ async fn main() -> Result<(), Box<dyn error::Error>> {
         StatusCode::PAYMENT_REQUIRED => println!("{}", "Too many messages"),
         StatusCode::FORBIDDEN => println!("{}", "Incorrect login"),
         StatusCode::INTERNAL_SERVER_ERROR => println!("{}", "Server error"),
-        _ => exit(0),  // assume it's 200ok, as described in the FreeMobile API
+        _ => (),  // assume it's 200ok, as described in the FreeMobile API
     }
     exit(status.as_u16().try_into().unwrap())
 }
